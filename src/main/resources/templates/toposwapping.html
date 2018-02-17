@@ -9,12 +9,14 @@
 <body>
 <form action = "/toposwapping" method="post">
     <label>Ajouter un topo à votre collection</label>
-    <input type="text" name="region">
-    <input type="text" name="auteur">
-    <input type="submit">
+    <label>Région</label>
+    <input type="text" name="region"/>
+    <label>Auteur</label>
+    <input type="text" name="auteur"/>
+    <input type="submit"/>
 </form>
 
-<p th:text="'Vous avez ajouté le topo de la région' + ${region} + ' écrit par l\'auteur : ' + ${auteur}'.'"></p>
+<p th:text="${message}" >Pas de message</p>
 </body>
 
 </html>

@@ -6,8 +6,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<div class="container-fluid">
 
-<h1 th:text="${name}"></h1>
+    <div class="col-xs-3"><a href="/index">Home</a> </div>
+    <div class="col-xs-3"><a href="/search">Search</a> </div>
+    <div class="col-xs-3"><a href="/toposwapping">Topo Swapping</a></div>
+    <div class="col-xs-3">About</div>
+</div>
+
+<h1 th:text="'Hello ' + ${name}">Pas de nom</h1>
 </body>
 
 </html>
