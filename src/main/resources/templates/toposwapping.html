@@ -3,17 +3,26 @@
 
 <head>
     <title>Topo Swapping</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <th:block th:replace="fragments/header :: head"></th:block>
 </head>
 
 <body>
+
+<header>
+    <th:block th:replace="fragments/header :: header">
+
+    </th:block>
+</header><br/>
+
 <form action = "/toposwapping" method="post">
-    <label>Ajouter un topo à votre collection</label>
-    <label>Région</label>
-    <input type="text" name="region"/>
-    <label>Auteur</label>
-    <input type="text" name="auteur"/>
-    <input type="submit"/>
+    <fieldset th:label="${message}">
+    <label>Ajouter un topo à votre collection</label><br/>
+    <label>Région</label><br/>
+    <input type="text" name="region"/><br/>
+    <label>Auteur</label><br/>
+    <input type="text" name="auteur"/><br/>
+    <input type="submit"/><br/>
+    </fieldset>
 </form>
 
 <p th:text="${message}" >Pas de message</p>

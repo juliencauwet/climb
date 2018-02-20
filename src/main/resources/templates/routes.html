@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Search</title>
+    <th:block th:replace="fragments/header :: head"></th:block>
+</head>
+
+<body>
+
+    <section class="sidenav">
+        <th:block th:replace="fragments/header :: header">
+
+        </th:block>
+    </section>
+
+    <section>
+    <form>
+        <fieldset>
+            <legend>Rechercher un parcours</legend>
+                 <select name="region">
+                        <option value="nord">nord</option>
+                        <option value="sud">sud</option>
+                        <option value="est">est</option>
+                        <option value="ouest">ouest</option>
+                        <option value="centre">centre</option>
+                 </select>
+        </fieldset>
+    </form>
+    </section>
+
+</body>
+
+</html>
