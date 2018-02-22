@@ -9,5 +9,14 @@
     <div th:replace="fragments/header :: header"></div>
 </header>
 
+<table >
+    <tr th:each="item : ${list}">
+        <td th:text="${item.getAutor()}"></td>
+        <td th:text="${item.getTitle()}"></td>
+        <td th:text="${item.getRegion()}"></td>
+    </tr>
+</table>
+
+
 </body>
 </html>
