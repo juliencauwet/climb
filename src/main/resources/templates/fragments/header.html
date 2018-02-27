@@ -1,40 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
-<head th:fragment="head">
-    <meta charset="UTF-8"/>
-    <title>Home</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-</head>
-
-<body>
-
-<header th:fragment="header">
-
-    <div id="mySidenav" class="sidenav">
-        <nav>
-            <ul>
-                <li><a href="/">Home</a> </li>
-                <li><a href="/routes">Parcours</a> </li>
-                <li><a href="/toposwapping">Topo Swapping</a></li>
-                <li><a href="/topos">Topos</a> </li>
-                <li>About</li>
-            </ul>
-        </nav>
+    <div class="row">
+        <div class="col-md-3">
+            <img id="logo" src="logo.png" alt="mountain-logo"/>
+        </div>
+        <div class="col-md-8">
+            <h1>Bienvenue sur Climbers!</h1>
+            <h2>Le site des échanges sur l'escalade</h2>
+        </div><br />
+        <div class="col-md-1">
+            <a href="/sign">Sign In / Sign up</a>
+        </div>
     </div>
 
-    <!-- Use any element to open the sidenav -->
-    <span onclick="openNav()">open</span>
 
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-    <div id="main">
-        ...
-    </div>
-
-</header>
-
-
-
-</body>
 </html>

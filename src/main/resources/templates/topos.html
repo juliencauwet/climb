@@ -1,22 +1,89 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Topos</title>
-    <th:block th:replace="fragments/header :: head"></th:block>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/test.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
+
 <body>
-<header>
-    <div th:replace="fragments/header :: header"></div>
-</header>
 
-<table >
-    <tr th:each="item : ${list}">
-        <td th:text="${item.getAutor()}"></td>
-        <td th:text="${item.getTitle()}"></td>
-        <td th:text="${item.getRegion()}"></td>
-    </tr>
-</table>
+<div class="container-fluid">
+    <header>
+        <div class="row">
+            <div class="col-md-3">
+                <img id="logo" src="logo.png" alt="mountain-logo"/>
+            </div>
+            <div class="col-md-8">
+                <h1>Bienvenue sur Climbers!</h1>
+                <h2>Le site des échanges sur l'escalade</h2>
+            </div><br />
+            <div class="col-md-1">
+                <a href="/sign">Sign In / Sign up</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="row">
+        <section class="col-md-3">
+            <nav class="sidenav">
+                <ul>
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="/routes"></a>Parcours</li>
+                    <li><a href="/toposwapping">Espace topos</a></li>
+                    <li><a href="/topos">Topos</a> </li>
+                    <li>About</li>
+                </ul>
+            </nav>
+
+            <!-- formulaire de COntactez-nous-->
+            <div id="contactform" class="jumbotron">
+                <form method="post" action="/routes">
+                    <fieldset>
+                        <legend>Contactez nous</legend>
+                        <label for="message">Message</label>
+                        <textarea rows="10" id="message" name="message" class="form-control"/>
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" class="form-control"/><br />
+                        <button type="submit" class="form-control btn-primary">Soumettre</button>
+                    </fieldset>
+                </form>
+
+            </div>
+        </section>
+        <section class="col-md-8">
+
+            <table class="list" >
+                <tr>
+                    <th>Auteur</th>
+                    <th>Titre</th>
+                    <th>Région</th>
+
+                </tr>
+                <tr th:each="item : ${list}">
+                    <a href="/"> <td class="author" th:text="${item.getAutor()}">texte </td></a>
+                    <td class="title" th:text="${item.getTitle()}"></td>
+                    <td class="region" th:text="${item.getRegion()}"></td>
+                </tr>
+            </table>
+
+        </section>
+        <section class="col-md-1">
+            <div class="fontawesome">
+            <ul>
+                <a class="btn btn-block btn-social btn-facebook" href="https://www.facebook.com/julien.cauwet"><span class="fa fa-facebook-square"></span> </a>
+                <a class="btn btn-block btn-social btn-linkedin" href="https://www.facebook.com/julien.cauwet"><span class="fa fa-linkedin-square"></span></a>
+                <a class="btn btn-block btn-social btn-github" href="https://www.facebook.com/julien.cauwet"><span class="fa fa-github-square"></span></a>
+
+            </ul>
+            </div>
+        </section>
+    </div>
 
 
+</div>
 </body>
 </html>

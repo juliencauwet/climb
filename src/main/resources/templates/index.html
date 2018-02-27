@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
 <head>
     <title>Home</title>
-    <th:block th:replace="fragments/header :: head"></th:block>
 
 </head>
 
@@ -10,12 +11,10 @@
 
 <body>
 
-    <div class="toc-wrapper toolbar-container">
+<section layout:fragment="content">
 
-   <div class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/header :: header"></div>
-    </div>
-
-
+   <h2> Je suis le contenu </h2>
+</section>
 
 </body>
 </html>
