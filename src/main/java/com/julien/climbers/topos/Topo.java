@@ -2,18 +2,20 @@ package com.julien.climbers.topos;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Topo {
 
     @Id
-    private String id;
+    @GeneratedValue
+    private Integer id;
     private String author;
     private String title;
     private String region;
 
-    public Topo(String id, String author, String title, String region) {
+    public Topo(Integer id, String author, String title, String region) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -24,11 +26,11 @@ public class Topo {
 
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

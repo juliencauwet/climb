@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
 
 <head>
-    <title>Search</title>
-    <th:block th:replace="fragments/header :: head"></th:block>
+    <title>Parcours</title>
+
 </head>
 
 <body>
 
-    <section class="sidenav">
-        <th:block th:replace="fragments/header :: header">
+<section layout:fragment="content">
+    <!-- INSERT CONTENT HERE -->
 
-        </th:block>
-    </section>
-
-    <section>
     <form>
         <fieldset>
             <legend>Rechercher un parcours</legend>
             <label >Région</label>
-                 <select name="region">
-                        <option value="nord">nord</option>
-                        <option value="sud">sud</option>
-                        <option value="est">est</option>
-                        <option value="ouest">ouest</option>
-                        <option value="centre">centre</option>
-                 </select>
-            <select name="site">
+            <select name="region">
                 <option value="nord">nord</option>
                 <option value="sud">sud</option>
                 <option value="est">est</option>
                 <option value="ouest">ouest</option>
                 <option value="centre">centre</option>
             </select>
+            <select name="site">
+                <option value="A">nord</option>
+                <option value="B">sud</option>
+                <option value="C">est</option>
+                <option value="D">ouest</option>
+                <option value="E">centre</option>
+            </select>
             <select name="secteur">
-                <option value="nord">nord</option>
+                <option value="1">nord</option>
                 <option value="sud">sud</option>
                 <option value="est">est</option>
                 <option value="ouest">ouest</option>
@@ -45,8 +42,7 @@
 
         </fieldset>
     </form>
-    </section>
+</section>
 
 </body>
-
 </html>

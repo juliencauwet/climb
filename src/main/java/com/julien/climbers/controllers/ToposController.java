@@ -22,19 +22,24 @@ public class ToposController {
     }
 
     @RequestMapping(value = "/topos", method = RequestMethod.POST)
-    public void addTopo(@RequestBody Topo topo){
-        TopoService.addTopo(topo);
+    public void addTopo(@RequestParam String author, @RequestParam String title,@RequestParam String region){
+        Topo topo = new Topo();
+        topo.setAutor(author);
+        topo.setTitle(title);
+        topo.setRegion(region);
+        System.out.println("topo enregistré");
+        topoService.addTopo(topo);
     }
 
     @RequestMapping(value = "/topos/{id}", method = RequestMethod.PUT)
     public void updateTopo(@PathVariable String id, @RequestBody Topo topo){
-        TopoService.updateTopo(id, topo);
+        topoService.updateTopo(id, topo);
     }
 
-    @RequestMapping(value = "/topos/{id}", method = RequestMethod.DELETE)
+    /*@RequestMapping(value = "/topos/{id}", method = RequestMethod.DELETE)
     public void deleteTopo(@PathVariable String id){
         topoService.deleteTopo(id);
-    }
+    }*/
 
     @RequestMapping("/topos")
     public String displayTopos(Model model){
