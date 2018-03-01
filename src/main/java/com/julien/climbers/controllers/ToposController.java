@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.julien.climbers.ClimbersApplication.var;
+
 @Controller
 public class ToposController {
 
@@ -22,13 +24,13 @@ public class ToposController {
     }
 
     @RequestMapping(value = "/topos", method = RequestMethod.POST)
-    public void addTopo(@RequestParam String author, @RequestParam String title,@RequestParam String region){
+    public void addTopo(@RequestParam String author, @RequestParam String title,@RequestParam String region, Model model){
         Topo topo = new Topo();
         topo.setAutor(author);
         topo.setTitle(title);
         topo.setRegion(region);
-        System.out.println("topo enregistré");
         topoService.addTopo(topo);
+        displayTopos(model);
     }
 
     @RequestMapping(value = "/topos/{id}", method = RequestMethod.PUT)
@@ -43,6 +45,8 @@ public class ToposController {
 
     @RequestMapping("/topos")
     public String displayTopos(Model model){
+        var++;
+        System.out.println("var:" + var);
         List<Topo> topoList = topoService.getTopos();
         model.addAttribute("list", topoList);
         return "topos";

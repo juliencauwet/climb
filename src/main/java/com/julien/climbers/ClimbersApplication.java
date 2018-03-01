@@ -5,8 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class ClimbersApplication {
+	public static int var;
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ClimbersApplication.class, args);
 	}
 }

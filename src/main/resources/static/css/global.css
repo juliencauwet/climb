@@ -16,12 +16,12 @@ a:hover{
 }
 
 .icone{
-    width: fit-content;
+    width: available;
     background: var(--bckCol);
     border: var(--br);
     border-radius: var(--bRs);
     font-size: 2em;
-    text-align: right;
+    text-align: center;
 }
 
 header{
