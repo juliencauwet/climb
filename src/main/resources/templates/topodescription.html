@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+    <title th:text="${title}">Home</title>
+
+</head>
+
+<body>
+
+<section layout:fragment="content">
+    <!-- INSERT CONTENT HERE -->
+    <h3 th:text="'Le livre ' + ${title} + ' a été écrit par ' + ${author} + ' et  parle des reliefs de la région : ' + ${region}" ></h3>
+</section>
+
+<section layout:fragment="content-right">
+
+    <form action = "/topos/topodescription" method="post">
+        <fieldset>
+            <label>Emprunter ce topo</label><br/>
+            <label>Du:</label><br/>
+            <input type="date" name="start"/><br/>
+            <label>Au:</label><br/>
+            <input type="date" name="end"/><br/>
+
+            <input type="submit"/><br/>
+
+            <h3 th:text="${message}"></h3>
+
+        </fieldset>
+    </form>
+
+</section>
+
+</body>
+</html>

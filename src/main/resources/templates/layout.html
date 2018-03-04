@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="en"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
     <head layout:fragment="head">
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="css/global.css"/>
+        <link rel="stylesheet" href="/css/global.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </head>
 
@@ -15,7 +15,7 @@
             <header class="row" layout:fragment="header">
                 <!-- col 1  -->
                 <div class="col-md-3">
-                    <img id="logo" src="logo.png" alt="mountain-logo"/>
+                    <img id="logo" src="/logo.png" alt="mountain-logo"/>
                 </div>
                 <!-- col 2  -->
                 <div class="col-md-7">
@@ -36,7 +36,6 @@
                 <ul>
                     <li><a href="/">Home</a> </li>
                     <li><a href="/routes"></a>Parcours</li>
-                    <li><a href="/toposwapping">Espace topos</a></li>
                     <li><a href="/topos">Topos</a> </li>
                     <li>About</li>
                 </ul>

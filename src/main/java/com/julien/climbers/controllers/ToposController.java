@@ -18,9 +18,20 @@ public class ToposController {
     @Autowired
     private TopoService topoService;
 
+  // @RequestMapping("/topos/{id}")
+  // public Topo getTopo(@PathVariable String id){
+  //     return topoService.getTopo(id);
+  // }
     @RequestMapping("/topos/{id}")
-    public Topo getTopo(@PathVariable String id){
-        return topoService.getTopo(id);
+    public String getTopo(@PathVariable String id, Model model){
+        int t = Integer.parseInt(id);
+        Topo topo = topoService.getTopo(t);
+
+        model.addAttribute("title", topo.getTitle());
+        model.addAttribute("author", topo.getAutor());
+        model.addAttribute("region", topo.getRegion());
+
+        return "topodescription";
     }
 
     @RequestMapping(value = "/topos", method = RequestMethod.POST)
@@ -45,10 +56,10 @@ public class ToposController {
 
     @RequestMapping("/topos")
     public String displayTopos(Model model){
-        var++;
-        System.out.println("var:" + var);
+
         List<Topo> topoList = topoService.getTopos();
         model.addAttribute("list", topoList);
+
         return "topos";
     }
 

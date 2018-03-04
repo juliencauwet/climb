@@ -30,7 +30,7 @@ public class TopoService {
         return topos;
     }
 
-    public Topo getTopo(String id){
+    public Topo getTopo(int id){
 
         return topoRepository.findOne(id);
     }
