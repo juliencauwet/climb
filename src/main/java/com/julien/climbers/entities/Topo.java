@@ -1,9 +1,9 @@
-package com.julien.climbers.topos;
-
+package com.julien.climbers.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Topo {
@@ -13,9 +13,11 @@ public class Topo {
     private Integer id;
     private String author;
     private String title;
-    private String region;
 
-    public Topo(Integer id, String author, String title, String region) {
+    @ManyToOne
+    private Region region;
+
+    public Topo(Integer id, String author, String title, Region region) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -50,11 +52,11 @@ public class Topo {
         this.title = title;
     }
 
-    public String getRegion() {
+    public Region getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public void setRegion(Region region) {
         this.region = region;
     }
 

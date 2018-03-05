@@ -30,29 +30,45 @@
         <form action="/routes">
             <fieldset>
                 <legend>Rechercher un parcours</legend>
-                <label >Région</label>
-                <select name="region">
-                    <option value="nord">nord</option>
-                    <option value="sud">sud</option>
-                    <option value="est">est</option>
-                    <option value="ouest">ouest</option>
-                    <option value="centre">centre</option>
+                <label >Région</label><br />
+                <select name="region" >
+                    <option th:each="item:${list}" th:text="${item.getName()}" th:value="${item.getName()}">nord</option>
+
                 </select><br />
-                <select name="site">
-                    <option value="nord">nord</option>
-                    <option value="sud">sud</option>
-                    <option value="est">est</option>
-                    <option value="ouest">ouest</option>
-                    <option value="centre">centre</option>
-                </select><br />
-                <select name="secteur">
-                    <option value="nord">nord</option>
-                    <option value="sud">sud</option>
-                    <option value="est">est</option>
-                    <option value="ouest">ouest</option>
-                    <option value="centre">centre</option>
+                <label >Cotation minimum</label><br />
+                <select name="cotationminc">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+
+                <select name="cotationminl">
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
                 </select><br />
 
+                <label >Cotation maximum</label><br />
+                <select name="cotationmaxc">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+
+                <select name="cotationmaxl">
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                </select><br />
+                <br />
                 <input type="submit"/>
 
 

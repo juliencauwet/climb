@@ -1,16 +1,13 @@
 package com.julien.climbers.controllers;
 
-import com.julien.climbers.topos.Topo;
-import com.julien.climbers.topos.TopoService;
+import com.julien.climbers.entities.Topo;
+import com.julien.climbers.service.TopoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static com.julien.climbers.ClimbersApplication.var;
 
 @Controller
 public class ToposController {
@@ -18,7 +15,7 @@ public class ToposController {
     @Autowired
     private TopoService topoService;
 
-  // @RequestMapping("/topos/{id}")
+  // @RequestMapping("/entities/{id}")
   // public Topo getTopo(@PathVariable String id){
   //     return topoService.getTopo(id);
   // }
@@ -39,7 +36,7 @@ public class ToposController {
         Topo topo = new Topo();
         topo.setAutor(author);
         topo.setTitle(title);
-        topo.setRegion(region);
+        topo.setRegion(null);
         topoService.addTopo(topo);
         displayTopos(model);
     }
@@ -49,7 +46,7 @@ public class ToposController {
         topoService.updateTopo(id, topo);
     }
 
-    /*@RequestMapping(value = "/topos/{id}", method = RequestMethod.DELETE)
+    /*@RequestMapping(value = "/entities/{id}", method = RequestMethod.DELETE)
     public void deleteTopo(@PathVariable String id){
         topoService.deleteTopo(id);
     }*/

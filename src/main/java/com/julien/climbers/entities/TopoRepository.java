@@ -1,4 +1,4 @@
-package com.julien.climbers.topos;
+package com.julien.climbers.entities;
 
 
 import org.springframework.data.repository.CrudRepository;

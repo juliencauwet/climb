@@ -12,32 +12,22 @@
 <section layout:fragment="content">
     <!-- INSERT CONTENT HERE -->
 
-    <form>
-        <fieldset>
-            <legend>Rechercher un parcours</legend>
-            <label >Région</label>
-            <select name="region">
-                <option value="nord">nord</option>
-                <option value="sud">sud</option>
-                <option value="est">est</option>
-                <option value="ouest">ouest</option>
-                <option value="centre">centre</option>
-            </select>
-            <select name="site">
-                <option value="A">nord</option>
-                <option value="B">sud</option>
-                <option value="C">est</option>
-                <option value="D">ouest</option>
-                <option value="E">centre</option>
-            </select>
-            <select name="secteur">
-                <option value="1">nord</option>
-                <option value="sud">sud</option>
-                <option value="est">est</option>
-                <option value="ouest">ouest</option>
-                <option value="centre">centre</option>
-            </select>
+    <table class="list" >
+        <tr>
+            <th>Région</th>
+            <th>Site</th>
+            <th>Difficulté</th>
 
+        </tr>
+        <!--
+        <tr th:each="item : ${list}">
+
+            <td class="site" th:text="${item.getAutor()}">texte </td>
+            <td class="title"><a th:href="@{'/topos/' + ${item.id}}" th:text="${item.getTitle()}">view</a></td>
+            <td class="region" th:text="${item.getRegion()}"></td>
+        </tr>
+        -->
+    </table>
 
 
         </fieldset>
