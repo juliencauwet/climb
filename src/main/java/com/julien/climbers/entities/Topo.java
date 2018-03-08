@@ -15,6 +15,9 @@ public class Topo {
     private String title;
 
     @ManyToOne
+    private Usor usor;
+
+    @ManyToOne
     private Region region;
 
     public Topo(Integer id, String author, String title, Region region) {

@@ -4,29 +4,26 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Entity
-public class Region {
+public class Site {
 
     @Id
     @GeneratedValue
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy = "region")
-    private Set<Topo> topo = new HashSet<>();
+    @OneToMany(mappedBy = "site")
+    private Set<Area> areas = new HashSet<>();
 
-    @OneToMany(mappedBy = "region")
-    private Set<Site> sites = new HashSet<>();
+    @ManyToOne
+    private Region region;
 
-
-    public Region(String name) {
+    public Site(String name) {
         this.name = name;
-        this.getClass().getMethods();
-
     }
 
-    private Region(){
-
+    private Site() {
     }
 
     public Integer getId() {
