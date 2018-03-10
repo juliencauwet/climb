@@ -23,16 +23,24 @@ public class Usor {
     @OneToMany(mappedBy = "usor")
     private Set<Topo> topos = new HashSet<>();
 
-    public Usor(Integer id, String pseudo, String email, String password, Set<Comment> comments, Set<Topo> topos) {
+    public Usor(Integer id, String pseudo, String email, String password) {
         this.id = id;
         this.pseudo = pseudo;
         this.email = email;
         this.password = password;
-        this.comments = comments;
-        this.topos = topos;
     }
 
-    private Usor(){
+    @Override
+    public String toString() {
+        return "Usor{" +
+                "id=" + id +
+                ", pseudo='" + pseudo + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public Usor(){
     }
 
     public Integer getId() {

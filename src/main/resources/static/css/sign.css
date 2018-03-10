@@ -5,10 +5,12 @@
     --bRs: 1em; /* border radius */
     --bckCol: #213370; /* background color*/
     --br: black 2px solid; /* border  */
+    --clr: floralwhite;
 }
 
 .container-fluid{
     width: 50%;
     text-align: center;
     background: var(--bckCol);
+    color: floralwhite;
 }
