@@ -31,8 +31,8 @@
             <fieldset>
                 <legend>Rechercher un parcours</legend>
                 <label >Région</label><br />
-                <select name="region" >
-                    <option th:each="item:${list}" th:text="${item.getName()}" th:value="${item.getName()}">nord</option>
+                <select name="region" onchange="location.reload()">
+                    <option th:each="item:${list}" th:text="${item.getName()}" th:value="${item.getName()}"></option>
 
                 </select><br />
                 <label >Cotation minimum</label><br />

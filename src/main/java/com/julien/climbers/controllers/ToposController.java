@@ -1,6 +1,8 @@
 package com.julien.climbers.controllers;
 
+import com.julien.climbers.entities.Region;
 import com.julien.climbers.entities.Topo;
+import com.julien.climbers.service.RegionService;
 import com.julien.climbers.service.TopoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ public class ToposController {
 
     @Autowired
     private TopoService topoService;
+    @Autowired
+    private RegionService regionService;
 
   // @RequestMapping("/entities/{id}")
   // public Topo getTopo(@PathVariable String id){
@@ -36,7 +40,7 @@ public class ToposController {
         Topo topo = new Topo();
         topo.setAutor(author);
         topo.setTitle(title);
-        topo.setRegion(null);
+        topo.setRegion(regionService.getRegionById(Integer.parseInt(region)));
         topoService.addTopo(topo);
         displayTopos(model);
     }
@@ -56,6 +60,9 @@ public class ToposController {
 
         List<Topo> topoList = topoService.getTopos();
         model.addAttribute("list", topoList);
+
+        List<Region> regionList = regionService.getRegion();
+        model.addAttribute("regions", regionList);
 
         return "topos";
     }

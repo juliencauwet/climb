@@ -38,7 +38,9 @@
             <label>Titre</label><br/>
             <input type="text" name="title"/><br/>
             <label>Région</label><br/>
-            <input type="text" name="region"/><br/>
+            <select name="region">
+                <option th:each="reg:${regions}" th:text="${reg.getName()}"/>
+            </select>
             <input type="submit"/><br/>
 
         </fieldset>

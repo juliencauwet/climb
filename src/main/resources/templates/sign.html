@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/sign.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <title>Authentification</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <fieldset>
+                <form action="/sign" method="post">
+                    <label>Identifiez-vous</label><br/>
+                    <input type="email" placeholder="Adresse Email" name="emailIn"/><br/>
+                    <input type="password" placeholder="Mot de passe" name="passwordIn"/><br/>
+                    <input type="submit" name="signin" value="signin"/><br/>
+
+                </form>
+            </fieldset>
+        </div>
+        <div class="col-md-6">
+            <fieldset>
+                <form action="/sign" method="post">
+                    <label>Ouvrez un compte</label><br/>
+                    <input type="text" placeholder="Pseudo" name="pseudo"/><br/>
+                    <input type="email" placeholder="Adresse Email" name="emailUp"/><br/>
+                    <input type="password" placeholder="Mot de passe" name="passwordUp1"/><br/>
+                    <input type="password" placeholder="Confirmation Mot de passe" name="passwordUp2"/><br/>
+                    <input type="submit" name="signup" value="signup"/><br/>
+
+                </form>
+            </fieldset>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

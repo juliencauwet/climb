@@ -19,4 +19,8 @@ public class RegionService {
         regionRepository.findAll().forEach(regions::add);
         return regions;
     }
+
+    public Region getRegionById(Integer id){
+        return regionRepository.findRegionById(id);
+    }
 }
